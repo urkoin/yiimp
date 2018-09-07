@@ -147,7 +147,7 @@ static void client_do_submit(YAAMP_CLIENT *client, YAAMP_JOB *job, YAAMP_JOB_VAL
 
 	uint64_t hash_int = get_hash_difficulty(submitvalues->hash_bin);
 	uint64_t coin_target = decode_compact(templ->nbits);
-	if (templ->nbits && !coin_target) coin_target = 0xFFFF000000000000ULL;
+	if (templ->nbits && !coin_target) coin_target = 0x00000000FFFF0000ULL;
 
 	int block_size = YAAMP_SMALLBUFSIZE;
 	vector<string>::const_iterator i;
@@ -512,7 +512,7 @@ bool client_submit(YAAMP_CLIENT *client, json_value *json_params)
 	uint64_t hash_int = get_hash_difficulty(submitvalues.hash_bin);
 	uint64_t user_target = diff_to_target(client->difficulty_actual);
 	uint64_t coin_target = decode_compact(templ->nbits);
-	if (templ->nbits && !coin_target) coin_target = 0xFFFF000000000000ULL;
+	if (templ->nbits && !coin_target) coin_target = 0x00000000FFFF0000ULL;
 
 	if (g_debuglog_hash) {
 		debuglog("%016llx actual\n", hash_int);
