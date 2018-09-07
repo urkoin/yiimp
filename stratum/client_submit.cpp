@@ -505,8 +505,8 @@ bool client_submit(YAAMP_CLIENT *client, json_value *json_params)
 				(int) submitvalues.hash_bin[31], (int) submitvalues.hash_bin[30],
 				(int) submitvalues.hash_bin[29], (int) submitvalues.hash_bin[28]);
 		}
-		client_submit_error(client, job, 25, "Invalid share", extranonce2, ntime, nonce);
-		return true;
+		//client_submit_error(client, job, 25, "Invalid share", extranonce2, ntime, nonce);
+		//return true;
 	}
 
 	uint64_t hash_int = get_hash_difficulty(submitvalues.hash_bin);
