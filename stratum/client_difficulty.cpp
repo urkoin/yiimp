@@ -3,10 +3,9 @@
 
 double client_normalize_difficulty(double difficulty)
 {
-	double min_stratum_diff = g_stratum_difficulty * 0.5;
+	double min_stratum_diff = 0.1;
 	if(difficulty < min_stratum_diff)
 		difficulty = min_stratum_diff;
-	else if(difficulty < 1) difficulty = floor(difficulty*1000/2)/1000*2;
 	else if(difficulty > 1) difficulty = floor(difficulty/2)*2;
 
 	return difficulty;
