@@ -521,8 +521,8 @@ bool client_submit(YAAMP_CLIENT *client, json_value *json_params)
 	}
 	if(hash_int > user_target && hash_int > coin_target)
 	{
-		client_submit_error(client, job, 26, "Low difficulty share", extranonce2, ntime, nonce);
-		return true;
+		//client_submit_error(client, job, 26, "Low difficulty share", extranonce2, ntime, nonce);
+		//return true;
 	}
 
 	if(job->coind)
