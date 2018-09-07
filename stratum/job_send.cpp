@@ -155,7 +155,7 @@ void job_broadcast(YAAMP_JOB *job)
 	///////////////////////
 
 	uint64_t coin_target = decode_compact(templ->nbits);
-	if (templ->nbits && !coin_target) coin_target = 0xFFFF000000000000ULL; // under decode_compact min diff
+	if (templ->nbits && !coin_target) coin_target = 0x00000000FFFF0000ULL; // under decode_compact min diff
 	double coin_diff = target_to_diff(coin_target);
 
 	debuglog("%s %d - diff %.9f job %x to %d/%d/%d clients, hash %.3f/%.3f in %.1f ms\n", job->name,
