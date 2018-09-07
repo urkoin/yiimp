@@ -3,12 +3,7 @@
 
 double client_normalize_difficulty(double difficulty)
 {
-	double min_stratum_diff = 0.1;
-	if(difficulty < min_stratum_diff)
-		difficulty = min_stratum_diff;
-	else if(difficulty > 1) difficulty = floor(difficulty/2)*2;
 
-	return difficulty;
 }
 
 void client_record_difficulty(YAAMP_CLIENT *client)
