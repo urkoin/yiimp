@@ -1,4 +1,3 @@
-
 #include "stratum.h"
 
 uint64_t lyra2z_height = 0;
